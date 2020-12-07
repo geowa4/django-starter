@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+cd mysite
+
+if [ $# -eq 0 ]
+then
+  exec daphne -b 0.0.0.0 mysite.asgi:application
+else
+  exec "$@"
+fi
